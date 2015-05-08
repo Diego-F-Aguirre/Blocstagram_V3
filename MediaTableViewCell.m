@@ -26,7 +26,8 @@ static UIColor *usernameLabelGray;
 static UIColor *commentLabelGray;
 static UIColor *linkColor;
 static NSParagraphStyle *paragraphStyle;
-
+static UIColor *commentLabelColor;
+static UIColor *commentLabelTextColor;
 
 @implementation MediaTableViewCell
 
@@ -35,9 +36,11 @@ static NSParagraphStyle *paragraphStyle;
 
     lightFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:11];
     boldFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
-    usernameLabelGray = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1]; /*#eeeeee*/
-    commentLabelGray = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1]; /*#e5e5e5*/
+    usernameLabelGray = [UIColor colorWithRed:160/255.0 green:158/255.0 blue:150/255.0 alpha:1]; /*#eeeeee*/
+    commentLabelGray = [UIColor colorWithRed:75/255.0 green:74/255.0 blue:70/255.0 alpha:1]; /*#e5e5e5*/
     linkColor = [UIColor colorWithRed:0.345 green:0.314 blue:0.427 alpha:1]; /*#58506d*/
+    commentLabelColor = [UIColor colorWithRed:242/250.0 green:110/250.0 blue:60/250.0 alpha:1]; /*F26E3C*/
+    commentLabelTextColor = [UIColor whiteColor];
     
     NSMutableParagraphStyle *mutableParagraphStyle = [[NSMutableParagraphStyle alloc]init];
     mutableParagraphStyle.headIndent = 20.0;
@@ -62,10 +65,12 @@ static NSParagraphStyle *paragraphStyle;
         self.usernameAndCaptionLabel.backgroundColor = usernameLabelGray;
         
         
+        
         self.commentLabel = [[UILabel alloc]init];
         self.commentLabel.numberOfLines = 0;
         self.commentLabel.backgroundColor = commentLabelGray;
-        
+        self.commentLabel.textColor = commentLabelTextColor;
+
         
         for (UIView *view in @[self.mediaImageView,self.usernameAndCaptionLabel,self.commentLabel]) {
         
@@ -89,8 +94,12 @@ static NSParagraphStyle *paragraphStyle;
     
     // #4
     NSRange usernameRange = [baseString rangeOfString:self.mediaItem.user.userName];
+//    NSRange commentNameRange = [baseString rangeOfString:self.mediaItem.caption];
     [mutableUsernameAndCaptionString addAttribute:NSFontAttributeName value:[boldFont fontWithSize:usernameFontSize] range:usernameRange];
-    [mutableUsernameAndCaptionString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+//    [mutableUsernameAndCaptionString addAttribute:NSFontAttributeName value:commentLabelColor range:commentNameRange];
+    [mutableUsernameAndCaptionString addAttribute:NSForegroundColorAttributeName value:commentLabelColor range:usernameRange];
+    
+    
     
     return mutableUsernameAndCaptionString;
     
