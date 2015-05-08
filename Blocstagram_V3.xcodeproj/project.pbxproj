@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC307EA91AFBBA9A001D3BBA /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */; };
 		BCE980121AF7BE9700F4222E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE980111AF7BE9700F4222E /* main.m */; };
 		BCE980151AF7BE9700F4222E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE980141AF7BE9700F4222E /* AppDelegate.m */; };
 		BCE9801D1AF7BE9700F4222E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE9801C1AF7BE9700F4222E /* Images.xcassets */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC307EA71AFBBA9A001D3BBA /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaTableViewCell.h; path = ../MediaTableViewCell.h; sourceTree = "<group>"; };
+		BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaTableViewCell.m; path = ../MediaTableViewCell.m; sourceTree = "<group>"; };
 		BCE9800C1AF7BE9600F4222E /* Blocstagram_V3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram_V3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE980101AF7BE9700F4222E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE980111AF7BE9700F4222E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				BCE980541AF90B1E00F4222E /* Comment.m */,
 				BCE980561AF90BC500F4222E /* DataSource.h */,
 				BCE980571AF90BC500F4222E /* DataSource.m */,
+				BC307EA71AFBBA9A001D3BBA /* MediaTableViewCell.h */,
+				BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */,
 				BCE9801C1AF7BE9700F4222E /* Images.xcassets */,
 				BCE980351AF7C20B00F4222E /* Images */,
 				BCE9801E1AF7BE9700F4222E /* LaunchScreen.xib */,
@@ -285,6 +290,7 @@
 			files = (
 				BCE9804F1AF909A900F4222E /* User.m in Sources */,
 				BCE980551AF90B1E00F4222E /* Comment.m in Sources */,
+				BC307EA91AFBBA9A001D3BBA /* MediaTableViewCell.m in Sources */,
 				BCE980521AF90A9000F4222E /* Media.m in Sources */,
 				BCE9804C1AF7C28800F4222E /* ImagesTableTableViewController.m in Sources */,
 				BCE980581AF90BC500F4222E /* DataSource.m in Sources */,
