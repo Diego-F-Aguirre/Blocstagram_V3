@@ -160,13 +160,15 @@ static UIColor *commentLabelTextColor;
         [super layoutSubviews];
     
          // Before layout, calculate the intrinsic size of the labels (the size they "want" to be), and add 20 to the height for some vertical padding.
-    CGSize maxSize = CGSizeMake(CGRectGetWidth(self.bounds), CGFLOAT_MAX);
-    CGSize usernameLabelSize = [self.usernameAndCaptionLabel sizeThatFits:maxSize];
-    CGSize commentLabelSize = [self.commentLabel sizeThatFits:maxSize];
-    
-    self.usernameAndCaptionLabelHeightConstraint.constant = usernameLabelSize.height + 20;
-    self.commentLabelHeightConstraint.constant = commentLabelSize.height + 20;
-    self.imageHeightConstraint.constant = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
+//    CGSize maxSize = CGSizeMake(CGRectGetWidth(self.bounds), CGFLOAT_MAX);
+//    CGSize usernameLabelSize = [self.usernameAndCaptionLabel sizeThatFits:maxSize];
+//    CGSize commentLabelSize = [self.commentLabel sizeThatFits:maxSize];
+//    
+//    self.usernameAndCaptionLabelHeightConstraint.constant = usernameLabelSize.height + 20;
+//    self.commentLabelHeightConstraint.constant = commentLabelSize.height + 20;
+//    self.imageHeightConstraint.constant = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
+   
+
 
     
     
