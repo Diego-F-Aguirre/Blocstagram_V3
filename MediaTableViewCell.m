@@ -109,6 +109,19 @@ static UIColor *commentLabelTextColor;
     return self;
 }
 
+- (void) setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+
+    [super setHighlighted:NO animated:animated];
+    
+}
+
+- (void) setSelected:(BOOL)selected animated:(BOOL)animated {
+    
+    [super setSelected:NO animated:animated];
+}
+
+
+
 - (NSAttributedString *)usernameAndCaptionString {
 
     //#1
