@@ -12,6 +12,7 @@
 @interface LoginViewController () <UIWebViewDelegate>
 
 @property (nonatomic, weak) UIWebView *webView;
+//@property (nonatomic, strong) UIButton *backButton;
 
 @end
 
@@ -34,6 +35,11 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     [self.view addSubview:webview];
     self.webView = webview;
     
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", @"Go Back") style:UIBarButtonItemStylePlain target:self action:@selector(backButtonTapped)];
+    
+    self.navigationItem.leftBarButtonItem = backButton;
+    
     self.title = NSLocalizedString(@"Login", @"Login");
     
     NSString *urlString = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", [DataSource instagramClientID], [self redirectURI]];
@@ -44,7 +50,15 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
         [self.webView loadRequest:request];
     }
 }
-
+                                                                                                                                              
+                                                                                                                                              
+ - (void) backButtonTapped {
+     NSLog(@"Go back");
+     [self.webView goBack];
+ }
+                                                                                                                                              
+                                                                                                                                              
+                                                                                                                                              
 - (void)dealloc {
 
     // Removing this line can cause a flickering effect when you relaunch the app after logging in, as the web view is briefly displayed, automatically authenticates with cookies, returns the access token, and dismisses the login view, sometimes in less than a second.
@@ -82,11 +96,14 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
 
     NSString *urlString = request.URL.absoluteString;
     
+    NSLog(@"%@",urlString);
+    
     if ([urlString hasPrefix:[self redirectURI]]) {
         // This contains our auth token
         NSRange rangeOfAccessTokenParameter = [urlString rangeOfString:@"access_token="];
         NSUInteger indexOfTokenStarting = rangeOfAccessTokenParameter.location + rangeOfAccessTokenParameter.length;
-        NSString *accessToken = [urlString substringToIndex:indexOfTokenStarting];
+        NSString *accessToken = [urlString substringFromIndex:indexOfTokenStarting];
+        NSLog(@"%@",accessToken);
         [[NSNotificationCenter defaultCenter]postNotificationName:LoginViewControllerDidGetAccessTokenNotification object:accessToken];
         
         return NO;
