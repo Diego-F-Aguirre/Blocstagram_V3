@@ -70,6 +70,17 @@
     return [DataSource sharedInstance].mediaItems;
 }
 
+- (CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    Media *item = self.items[indexPath.row];
+    if (item.image) {
+        return 350;
+    }else {
+    
+        return 150;
+    }
+}
+
 #pragma mark - Table view data source
 
 
@@ -83,7 +94,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
-    cell.mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+    cell.mediaItem = self.items[indexPath.row];
     
     return cell;
     
