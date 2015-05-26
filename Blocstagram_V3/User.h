@@ -11,7 +11,7 @@
 
 
 
-@interface User : NSObject
+@interface User : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *idNumber;
 @property (nonatomic, strong) NSString *userName;
