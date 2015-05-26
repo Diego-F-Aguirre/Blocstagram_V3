@@ -31,6 +31,11 @@
     
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
 }
+- (void)viewDidAppear:(BOOL)animated {
+    //fetch
+    
+    
+}
 
 - (void) dealloc {
 
@@ -58,6 +63,7 @@
         self = [super initWithStyle:style];
         if (self) {
                 // Custom initialization
+            
             
         
             }
