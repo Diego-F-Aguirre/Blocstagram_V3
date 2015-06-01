@@ -62,9 +62,34 @@
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
     
+    //add share button - Name, type and title
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [shareButton addTarget:self action:@selector(shareButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [shareButton setTitle:@"Share" forState:UIControlStateNormal];
+    shareButton.frame = CGRectMake(290, 10, 100, 50);
+    //add button to view
+    [self.view addSubview:shareButton];
+    
+    
     
     
 }
+
+// add method to respond to button tap
+
+- (void) shareButtonTapped {
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    
+    if (self.media.image) {
+        [itemsToShare addObject:self.media.image];
+    }
+    
+    if (itemsToShare.count > 0 ) {
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
+}
+
 
 - (void) viewWillLayoutSubviews {
 
@@ -83,6 +108,8 @@
     
     self.scrollView.minimumZoomScale = minScale;
     self.scrollView.maximumZoomScale = 1;
+    
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated{
