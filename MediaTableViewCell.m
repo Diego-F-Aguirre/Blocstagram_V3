@@ -23,6 +23,7 @@
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressureGestureRecognizer;
+@property (nonatomic, strong) UITapGestureRecognizer *doubleTapGestureRecognizer;
 
 
 @end
@@ -77,6 +78,10 @@ static UIColor *commentLabelTextColor;
         self.longPressureGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressFired:)];
         self.longPressureGestureRecognizer.delegate = self;
         [self.mediaImageView addGestureRecognizer:self.longPressureGestureRecognizer];
+        
+        self.doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTappedFired:)];
+        self.doubleTapGestureRecognizer.delegate = self;
+        self.doubleTapGestureRecognizer.numberOfTouchesRequired = 2;
         
         
         self.usernameAndCaptionLabel = [[UILabel alloc]init];
@@ -245,6 +250,11 @@ static UIColor *commentLabelTextColor;
     if (sender.state == UIGestureRecognizerStateBegan) {
         [self.delegate cell:self didLongPressImageView:self.mediaImageView];
     }
+}
+
+- (void) doubleTappedFired: (UITapGestureRecognizer *)sender{
+
+    [self.delegate cell:self didTapImageView:self.mediaImageView];
 }
 
 #pragma mark - UIGestureRecognizerDelegate

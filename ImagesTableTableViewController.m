@@ -238,6 +238,14 @@
     }
 }
 
+- (void) cell:(MediaTableViewCell *)cell didDoubltTapImageView:(UIImageView *)imageView{
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    
+    if (cell.mediaItem.image == 0) {
+        [itemsToShare addObject:cell.mediaItem.image];
+    }
+}
+
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
