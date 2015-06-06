@@ -239,10 +239,10 @@
 }
 
 - (void) cell:(MediaTableViewCell *)cell didDoubltTapImageView:(UIImageView *)imageView{
-    NSMutableArray *itemsToShare = [NSMutableArray array];
     
-    if (cell.mediaItem.image == 0) {
-        [itemsToShare addObject:cell.mediaItem.image];
+
+    if (cell.mediaItem.image <= 0) {
+        self.tableView.reloadData;
     }
 }
 
