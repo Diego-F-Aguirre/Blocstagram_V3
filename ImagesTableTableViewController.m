@@ -102,6 +102,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     MediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
     cell.delegate = self;
     cell.mediaItem = self.items[indexPath.row];
@@ -218,6 +219,19 @@
 // #4
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self infiniteScrollIfNecessary];
+}
+
+- (void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+    
+    NSIndexPath *indexPath;
+    Media *mediaItem = self.items[indexPath.row];
+    NSArray *visibleCells = [self.tableView visibleCells];
+    
+    
+        if (visibleCells && mediaItem.downloadState == MediaDownloadStateNeedsImage) {
+            [[DataSource sharedInstance] downloadImageForMediaItem:mediaItem];
+        }
+    
 }
 
 #pragma makr - MediaTableViewCellDelegate
