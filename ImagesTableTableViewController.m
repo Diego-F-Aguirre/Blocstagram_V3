@@ -243,6 +243,11 @@
     [self presentViewController:fullScreenVC animated:YES completion:nil];
 }
 
+- (void) didDoubleTapImageView:(Media *)mediaItem {
+    mediaItem.image = nil;
+    [[DataSource sharedInstance] downloadImageForMediaItem:mediaItem];
+}
+
 - (void) cell:(MediaTableViewCell *)cell didLongPressImageView:(UIImageView *)imageView{
 
     NSMutableArray *itemsToShare = [NSMutableArray array];
@@ -261,13 +266,20 @@
     }
 }
 
-- (void) cell:(MediaTableViewCell *)cell didDoubltTapImageView:(UIImageView *)imageView{
-    
+- (void) cellDidPressLikeButton:(MediaTableViewCell *)cell{
 
-//    if (cell.mediaItem.image <= 0) {
-//        self.tableView.reloadData;
-//    }
+    Media *item = cell.mediaItem;
+    
+    [[DataSource sharedInstance] toggleLikeOnMediaItem:item withCompletionHandler:^{
+        if (cell.mediaItem == item) {
+            cell.mediaItem = item;
+        
+        }
+    }];
+    
+    cell.mediaItem = item;
 }
+
 
 /*
 // Override to support rearranging the table view.
