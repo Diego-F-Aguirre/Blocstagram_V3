@@ -27,6 +27,7 @@
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTapGestureRecognizer;
 
 @property (nonatomic, strong) LikeButton *likeButton;
+@property (nonatomic, weak) UILabel *likeCounter;
 
 @end
 
@@ -101,6 +102,12 @@ static UIColor *commentLabelTextColor;
         self.likeButton = [[LikeButton alloc]init];
         [self.likeButton addTarget:self action:@selector(likePressed:) forControlEvents:UIControlEventTouchUpInside];
         self.likeButton.backgroundColor = usernameLabelGray;
+        
+        self.likeCounter = [[UILabel alloc]initWithFrame:CGRectMake(200, 100, 20, 20)];
+        self.likeCounter.numberOfLines = 0;
+        self.likeCounter.backgroundColor = commentLabelGray;
+        self.likeCounter.textColor = commentLabelTextColor;
+        
         
     
     
@@ -249,6 +256,19 @@ static UIColor *commentLabelTextColor;
         return CGRectGetMaxY(layoutCell.commentLabel.frame);
 }
 
+- (UILabel *) Counter {
+
+    // Write method counter here
+    
+    for (int x; x < 0; x++) {
+        _likeCounter.text = [NSString stringWithFormat:@"%d", x];
+    }
+    
+    [self.delegate cellDidPressLikeButton:self];
+    
+    return nil;
+}
+
 #pragma mark - Liking
 
 - (void) likePressed:(UIButton *)sender {
@@ -256,10 +276,13 @@ static UIColor *commentLabelTextColor;
     [self.delegate cellDidPressLikeButton:self];
 }
 
+
+
 #pragma mark - Image View
 - (void) tapFired:(UITapGestureRecognizer *)sender{
 
     [self.delegate cell:self didTapImageView:self.mediaImageView];
+    
 }
 
 - (void) longPressFired: (UILongPressGestureRecognizer *)sender {
