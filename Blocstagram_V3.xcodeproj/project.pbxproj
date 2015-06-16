@@ -10,6 +10,7 @@
 		828841D495711D82F68BD5B3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8101597645150D927A949B /* libPods.a */; };
 		BC307EA91AFBBA9A001D3BBA /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */; };
 		BC307EAC1B0389AE001D3BBA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC307EAB1B0389AE001D3BBA /* LoginViewController.m */; };
+		BC91B1A81B289B070057035E /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91B1A71B289B070057035E /* ComposeCommentView.m */; };
 		BCD657871B17740300787884 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD657861B17740300787884 /* MediaFullScreenViewController.m */; };
 		BCDA36081B23E8AA00DB68BF /* angle-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */; };
 		BCDA36091B23E8AA00DB68BF /* angle-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDA36001B23E8AA00DB68BF /* angle-mask@2x.png */; };
@@ -51,6 +52,8 @@
 		BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaTableViewCell.m; path = ../MediaTableViewCell.m; sourceTree = "<group>"; };
 		BC307EAA1B0389AE001D3BBA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		BC307EAB1B0389AE001D3BBA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		BC91B1A61B289B070057035E /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComposeCommentView.h; path = ../ComposeCommentView.h; sourceTree = "<group>"; };
+		BC91B1A71B289B070057035E /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposeCommentView.m; path = ../ComposeCommentView.m; sourceTree = "<group>"; };
 		BCD657851B17740300787884 /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaFullScreenViewController.h; path = ../MediaFullScreenViewController.h; sourceTree = "<group>"; };
 		BCD657861B17740300787884 /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaFullScreenViewController.m; path = ../MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask.png"; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				BCDA36151B23ECC100DB68BF /* CircleSpinnerView.m */,
 				BCDA36171B272D0E00DB68BF /* LikeButton.h */,
 				BCDA36181B272D0E00DB68BF /* LikeButton.m */,
+				BC91B1A61B289B070057035E /* ComposeCommentView.h */,
+				BC91B1A71B289B070057035E /* ComposeCommentView.m */,
 				BCE9801C1AF7BE9700F4222E /* Images.xcassets */,
 				BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */,
 				BCDA36001B23E8AA00DB68BF /* angle-mask@2x.png */,
@@ -365,6 +370,7 @@
 				BC307EAC1B0389AE001D3BBA /* LoginViewController.m in Sources */,
 				BCDA36191B272D0E00DB68BF /* LikeButton.m in Sources */,
 				BCE980581AF90BC500F4222E /* DataSource.m in Sources */,
+				BC91B1A81B289B070057035E /* ComposeCommentView.m in Sources */,
 				BCE980151AF7BE9700F4222E /* AppDelegate.m in Sources */,
 				BCE980121AF7BE9700F4222E /* main.m in Sources */,
 			);
