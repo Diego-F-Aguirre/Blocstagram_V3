@@ -11,6 +11,8 @@
 		BC307EA91AFBBA9A001D3BBA /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */; };
 		BC307EAC1B0389AE001D3BBA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC307EAB1B0389AE001D3BBA /* LoginViewController.m */; };
 		BC91B1A81B289B070057035E /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91B1A71B289B070057035E /* ComposeCommentView.m */; };
+		BCD50BC91B3050B100F9F45D /* CameraToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BC81B3050B100F9F45D /* CameraToolBar.m */; };
+		BCD50BD51B31C89000F9F45D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BD41B31C89000F9F45D /* CameraViewController.m */; };
 		BCD657871B17740300787884 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD657861B17740300787884 /* MediaFullScreenViewController.m */; };
 		BCDA36081B23E8AA00DB68BF /* angle-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */; };
 		BCDA36091B23E8AA00DB68BF /* angle-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDA36001B23E8AA00DB68BF /* angle-mask@2x.png */; };
@@ -54,6 +56,10 @@
 		BC307EAB1B0389AE001D3BBA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		BC91B1A61B289B070057035E /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComposeCommentView.h; path = ../ComposeCommentView.h; sourceTree = "<group>"; };
 		BC91B1A71B289B070057035E /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposeCommentView.m; path = ../ComposeCommentView.m; sourceTree = "<group>"; };
+		BCD50BC71B3050B100F9F45D /* CameraToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraToolBar.h; path = ../CameraToolBar.h; sourceTree = "<group>"; };
+		BCD50BC81B3050B100F9F45D /* CameraToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraToolBar.m; path = ../CameraToolBar.m; sourceTree = "<group>"; };
+		BCD50BD31B31C89000F9F45D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = ../CameraViewController.h; sourceTree = "<group>"; };
+		BCD50BD41B31C89000F9F45D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = ../CameraViewController.m; sourceTree = "<group>"; };
 		BCD657851B17740300787884 /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaFullScreenViewController.h; path = ../MediaFullScreenViewController.h; sourceTree = "<group>"; };
 		BCD657861B17740300787884 /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaFullScreenViewController.m; path = ../MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask.png"; sourceTree = "<group>"; };
@@ -175,6 +181,10 @@
 				BCDA36181B272D0E00DB68BF /* LikeButton.m */,
 				BC91B1A61B289B070057035E /* ComposeCommentView.h */,
 				BC91B1A71B289B070057035E /* ComposeCommentView.m */,
+				BCD50BC71B3050B100F9F45D /* CameraToolBar.h */,
+				BCD50BC81B3050B100F9F45D /* CameraToolBar.m */,
+				BCD50BD31B31C89000F9F45D /* CameraViewController.h */,
+				BCD50BD41B31C89000F9F45D /* CameraViewController.m */,
 				BCE9801C1AF7BE9700F4222E /* Images.xcassets */,
 				BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */,
 				BCDA36001B23E8AA00DB68BF /* angle-mask@2x.png */,
@@ -360,10 +370,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD50BD51B31C89000F9F45D /* CameraViewController.m in Sources */,
 				BCD657871B17740300787884 /* MediaFullScreenViewController.m in Sources */,
 				BCDA36161B23ECC100DB68BF /* CircleSpinnerView.m in Sources */,
 				BCE9804F1AF909A900F4222E /* User.m in Sources */,
 				BCE980551AF90B1E00F4222E /* Comment.m in Sources */,
+				BCD50BC91B3050B100F9F45D /* CameraToolBar.m in Sources */,
 				BC307EA91AFBBA9A001D3BBA /* MediaTableViewCell.m in Sources */,
 				BCE980521AF90A9000F4222E /* Media.m in Sources */,
 				BCE9804C1AF7C28800F4222E /* ImagesTableTableViewController.m in Sources */,
