@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class ComposeCommentView;
 
 @protocol ComposeCommentViewDelegate <NSObject>

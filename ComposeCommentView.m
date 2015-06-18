@@ -62,14 +62,28 @@
         self.textView.backgroundColor = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1];/*#eeeeee*/
         self.button.backgroundColor = [UIColor colorWithRed:0.345 green:0.318 blue:0.424 alpha:1]; /*#58516c*/
         
-        CGFloat buttonX = CGRectGetWidth(self.bounds) - CGRectGetWidth(self.button.frame) - 20;
-        self.button.frame = CGRectMake(buttonX, 10, 80, 20);
+        
+        [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.0 initialSpringVelocity:0.008 options:UIViewAnimationOptionCurveLinear animations:^{
+            //your animations go here
+            
+            CGFloat buttonX = CGRectGetWidth(self.bounds) - CGRectGetWidth(self.button.frame) - 20;
+            self.button.frame = CGRectMake(buttonX, 10, 80, 20);
+            
+            UIDynamicItemBehavior *elasticityBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.button]];
+            elasticityBehavior.elasticity = 1.05f;
+            [self.dynamicBounce addBehavior:elasticityBehavior];
+        }
+                         completion:nil];
+        
+       
     } else {
     
         self.textView.backgroundColor = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1];
         self.button.backgroundColor = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1];
         
         self.button.frame = CGRectMake(10, 10, 80, 20);
+        
+        
     }
     
     CGSize buttonSize = self.button.frame.size;
@@ -81,6 +95,8 @@
     
     self.textView.textContainer.exclusionPaths = @[buttonPath];
     
+    
+
 }
 
 - (void)stopComposingComment{
@@ -127,6 +143,7 @@
         self.textView.userInteractionEnabled = NO;
         [self.delegate commentViewDidPressCommentButton:self];
         
+    
     }else {
     
         [self setIsWritingComment:YES animated:YES];
@@ -134,12 +151,7 @@
     }
 }
 
-//- (void) bounceComment{
-//
-//    [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:0.5 options:UIViewAnimationCurveEaseInOut animations:^{
-//        self.button.layer.transform = CATransform3DIdentity;
-//    } completion:nil];
-//}
+
 
 #pragma mark - UITextViewDelegate
 
