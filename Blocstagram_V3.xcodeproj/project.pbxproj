@@ -25,6 +25,7 @@
 		BCDA36101B23E8AA00DB68BF /* heart-full@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDA36071B23E8AA00DB68BF /* heart-full@3x.png */; };
 		BCDA36161B23ECC100DB68BF /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDA36151B23ECC100DB68BF /* CircleSpinnerView.m */; };
 		BCDA36191B272D0E00DB68BF /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDA36181B272D0E00DB68BF /* LikeButton.m */; };
+		BCDC05EB1B3B036F00515420 /* UIImage+ImageUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC05EA1B3B036F00515420 /* UIImage+ImageUtilities.m */; };
 		BCE980121AF7BE9700F4222E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE980111AF7BE9700F4222E /* main.m */; };
 		BCE980151AF7BE9700F4222E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE980141AF7BE9700F4222E /* AppDelegate.m */; };
 		BCE9801D1AF7BE9700F4222E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE9801C1AF7BE9700F4222E /* Images.xcassets */; };
@@ -75,6 +76,8 @@
 		BCDA36151B23ECC100DB68BF /* CircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleSpinnerView.m; path = ../CircleSpinnerView.m; sourceTree = "<group>"; };
 		BCDA36171B272D0E00DB68BF /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LikeButton.h; path = ../LikeButton.h; sourceTree = "<group>"; };
 		BCDA36181B272D0E00DB68BF /* LikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LikeButton.m; path = ../LikeButton.m; sourceTree = "<group>"; };
+		BCDC05E91B3B036F00515420 /* UIImage+ImageUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageUtilities.h"; sourceTree = "<group>"; };
+		BCDC05EA1B3B036F00515420 /* UIImage+ImageUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageUtilities.m"; sourceTree = "<group>"; };
 		BCE9800C1AF7BE9600F4222E /* Blocstagram_V3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram_V3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE980101AF7BE9700F4222E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE980111AF7BE9700F4222E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				BCD50BC81B3050B100F9F45D /* CameraToolBar.m */,
 				BCD50BD31B31C89000F9F45D /* CameraViewController.h */,
 				BCD50BD41B31C89000F9F45D /* CameraViewController.m */,
+				BCDC05E91B3B036F00515420 /* UIImage+ImageUtilities.h */,
+				BCDC05EA1B3B036F00515420 /* UIImage+ImageUtilities.m */,
 				BCE9801C1AF7BE9700F4222E /* Images.xcassets */,
 				BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */,
 				BCDA36001B23E8AA00DB68BF /* angle-mask@2x.png */,
@@ -278,6 +283,7 @@
 				TargetAttributes = {
 					BCE9800B1AF7BE9600F4222E = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = HQN23BS377;
 					};
 					BCE980241AF7BE9700F4222E = {
 						CreatedOnToolsVersion = 6.4;
@@ -384,6 +390,7 @@
 				BCE980581AF90BC500F4222E /* DataSource.m in Sources */,
 				BC91B1A81B289B070057035E /* ComposeCommentView.m in Sources */,
 				BCE980151AF7BE9700F4222E /* AppDelegate.m in Sources */,
+				BCDC05EB1B3B036F00515420 /* UIImage+ImageUtilities.m in Sources */,
 				BCE980121AF7BE9700F4222E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +512,7 @@
 			baseConfigurationReference = B7D6FE2F05069FD79D25ABF1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Blocstagram_V3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +524,7 @@
 			baseConfigurationReference = D423AA7CED51E2D056F68DEC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Blocstagram_V3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
