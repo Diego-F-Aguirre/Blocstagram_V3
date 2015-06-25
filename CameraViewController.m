@@ -132,32 +132,33 @@
     self.bottomView.alpha = 0.5;
 }
 
--(NSArray *)horizontalLines{
-
-    if (!_horizontalLines) {
-        _horizontalLines = [self newArrayOfFourthWhiteViews];
-    }
-    return _horizontalLines;
-}
-
--(NSArray *)verticalLines{
-
-    if (!_verticalLines) {
-        _verticalLines = [self newArrayOfFourthWhiteViews];
-    }
-    return _verticalLines;
-}
-
--(NSArray *)newArrayOfFourthWhiteViews{
-
-    NSMutableArray *array = [NSMutableArray array];
+- (NSArray *) horizontalLines {
+        if (!_horizontalLines) {
+                _horizontalLines = [self newArrayOfFourWhiteViews];
+            }
     
-    for (int i = 0; i < 4; i++) {
-        UIView *view = [UIView new];
-        view.backgroundColor = [UIColor whiteColor];
+        return _horizontalLines;
     }
-    return array;
-}
+
+- (NSArray *) verticalLines {
+        if (!_verticalLines) {
+                _verticalLines = [self newArrayOfFourWhiteViews];
+            }
+    
+        return _verticalLines;
+    }
+
+- (NSArray *) newArrayOfFourWhiteViews {
+        NSMutableArray *array = [NSMutableArray array];
+    
+        for (int i = 0; i < 4; i++) {
+                UIView *view = [UIView new];
+                view.backgroundColor = [UIColor whiteColor];
+                [array addObject:view];
+            }
+    
+        return array;
+    }
 
 #pragma mark - Event Handling
 
@@ -173,34 +174,34 @@
     [super viewWillLayoutSubviews];
     
     CGFloat width = CGRectGetWidth(self.view.bounds);
-    self.topView.frame = CGRectMake(0, self.topLayoutGuide.length, width, 44);
+        self.topView.frame = CGRectMake(0, self.topLayoutGuide.length, width, 44);
     
-    CGFloat yOriginOfBottomView = CGRectGetMaxY(self.topView.frame);
-    CGFloat heightOfBottomView = CGRectGetHeight(self.view.frame) - yOriginOfBottomView;
-    self.bottomView.frame = CGRectMake(0, yOriginOfBottomView, width, heightOfBottomView);
+        CGFloat yOriginOfBottomView = CGRectGetMaxY(self.topView.frame) + width;
+        CGFloat heightOfBottomView = CGRectGetHeight(self.view.frame) - yOriginOfBottomView;
+        self.bottomView.frame = CGRectMake(0, yOriginOfBottomView, width, heightOfBottomView);
     
-    CGFloat thirdOfWidth = width / 3;
+        CGFloat thirdOfWidth = width / 3;
     
     for (int i = 0; i < 4; i++) {
-        UIView *horizontalLine = self.horizontalLines[i];
-        UIView *verticalLine = self.verticalLines[i];
+                UIView *horizontalLine = self.horizontalLines[i];
+                UIView *verticalLine = self.verticalLines[i];
         
-        horizontalLine.frame = CGRectMake(0, (i * thirdOfWidth) + CGRectGetMaxY(self.topView.frame), width, 0.5);
+                horizontalLine.frame = CGRectMake(0, (i * thirdOfWidth) + CGRectGetMaxY(self.topView.frame), width, 0.5);
         
-        CGRect verticalFrame = CGRectMake(i * thirdOfWidth, CGRectGetMaxY(self.topView.frame), 0.5, width);
+                CGRect verticalFrame = CGRectMake(i * thirdOfWidth, CGRectGetMaxY(self.topView.frame), 0.5, width);
         
-        if (i == 3) {
-            verticalFrame.origin.x -= 0.5;
-        }
+                if (i == 3) {
+                        verticalFrame.origin.x -= 0.5;
+                    }
         
-        verticalLine.frame = verticalFrame;
-    }
+                verticalLine.frame = verticalFrame;
+            }
     
-    self.imagePreview.frame = self.view.bounds;
-    self.captureVideoPreviewLayer.frame = self.imagePreview.bounds;
+        self.imagePreview.frame = self.view.bounds;
+        self.captureVideoPreviewLayer.frame = self.imagePreview.bounds;
     
-    CGFloat cameraToolBarHeight = 100;
-    self.cameraToolbar.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds) - cameraToolBarHeight, width, cameraToolBarHeight);
+        CGFloat cameraToolbarHeight = 100;
+        self.cameraToolbar.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds) - cameraToolbarHeight, width, cameraToolbarHeight);
     
 }
 
