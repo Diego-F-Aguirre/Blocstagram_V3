@@ -10,8 +10,10 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CameraToolBar.h"
 #import "UIImage+ImageUtilities.h"
+#import "CropBox.h"
+#import "ImageLibraryViewController.h"
 
-@interface CameraViewController () <CameraToolBarDelegate>
+@interface CameraViewController () <CameraToolBarDelegate, ImageLibraryViewControllerDelegate>
 
 @property (nonatomic, strong) UIView *imagePreview;
 
@@ -19,8 +21,7 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput;
 
-@property (nonatomic, strong) NSArray *horizontalLines;
-@property (nonatomic, strong) NSArray *verticalLines;
+@property (nonatomic, strong) CropBox *cropBox;
 @property (nonatomic, strong) UIToolbar *topView;
 @property (nonatomic, strong) UIToolbar *bottomView;
 
@@ -106,9 +107,7 @@
 
 - (void)addViewsToViewHierarchy{
 
-    NSMutableArray *views = [@[self.imagePreview,self.topView,self.bottomView]mutableCopy];
-    [views addObjectsFromArray:self.horizontalLines];
-    [views addObjectsFromArray:self.verticalLines];
+    NSMutableArray *views = [@[self.imagePreview,self.cropBox,self.topView, self.bottomView]mutableCopy];
     [views addObject:self.cameraToolbar];
     
     for (UIView *view in views){
@@ -123,6 +122,7 @@
     self.imagePreview = [UIView new];
     self.topView = [UIToolbar new];
     self.bottomView = [UIToolbar new];
+    self.cropBox = [CropBox new];
     self.cameraToolbar = [[CameraToolBar alloc] initWithImageNames:@[@"rotate",@"road"]];
     self.cameraToolbar.delegate = self;
     UIColor *whiteBG = [UIColor colorWithWhite:1.0 alpha:.15];
@@ -131,34 +131,6 @@
     self.topView.alpha = 0.5;
     self.bottomView.alpha = 0.5;
 }
-
-- (NSArray *) horizontalLines {
-        if (!_horizontalLines) {
-                _horizontalLines = [self newArrayOfFourWhiteViews];
-            }
-    
-        return _horizontalLines;
-    }
-
-- (NSArray *) verticalLines {
-        if (!_verticalLines) {
-                _verticalLines = [self newArrayOfFourWhiteViews];
-            }
-    
-        return _verticalLines;
-    }
-
-- (NSArray *) newArrayOfFourWhiteViews {
-        NSMutableArray *array = [NSMutableArray array];
-    
-        for (int i = 0; i < 4; i++) {
-                UIView *view = [UIView new];
-                view.backgroundColor = [UIColor whiteColor];
-                [array addObject:view];
-            }
-    
-        return array;
-    }
 
 #pragma mark - Event Handling
 
@@ -180,26 +152,9 @@
         CGFloat heightOfBottomView = CGRectGetHeight(self.view.frame) - yOriginOfBottomView;
         self.bottomView.frame = CGRectMake(0, yOriginOfBottomView, width, heightOfBottomView);
     
-        CGFloat thirdOfWidth = width / 3;
-    
-    for (int i = 0; i < 4; i++) {
-                UIView *horizontalLine = self.horizontalLines[i];
-                UIView *verticalLine = self.verticalLines[i];
-        
-                horizontalLine.frame = CGRectMake(0, (i * thirdOfWidth) + CGRectGetMaxY(self.topView.frame), width, 0.5);
-        
-                CGRect verticalFrame = CGRectMake(i * thirdOfWidth, CGRectGetMaxY(self.topView.frame), 0.5, width);
-        
-                if (i == 3) {
-                        verticalFrame.origin.x -= 0.5;
-                    }
-        
-                verticalLine.frame = verticalFrame;
-            }
-    
         self.imagePreview.frame = self.view.bounds;
         self.captureVideoPreviewLayer.frame = self.imagePreview.bounds;
-    
+        self.cropBox.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame), width, width);
         CGFloat cameraToolbarHeight = 100;
         self.cameraToolbar.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds) - cameraToolbarHeight, width, cameraToolbarHeight);
     
@@ -247,7 +202,9 @@
 
 - (void) rightButtonPressedOnToolbar:(CameraToolBar *)toolbar{
 
-    NSLog(@"Photo library button pressed");
+    ImageLibraryViewController *imageLibraryVC = [[ImageLibraryViewController alloc] init];
+        imageLibraryVC.delegate = self;
+        [self.navigationController pushViewController:imageLibraryVC animated:YES];
 }
 
 - (void) cameraButtonPressedOnToolbar:(CameraToolBar *)toolbar {
@@ -273,25 +230,15 @@
                         UIImage *image = [UIImage imageWithData:imageData scale:[UIScreen mainScreen].scale];
             
             // #11
-                        image = [image imageWithFixedOrientation];
-                        image = [image imageResizedToMatchAspectRatioOfSize:self.captureVideoPreviewLayer.bounds.size];
-            
-            // #12
-                        UIView *leftLine = self.verticalLines.firstObject;
-                        UIView *rightLine = self.verticalLines.lastObject;
-                        UIView *topLine = self.horizontalLines.firstObject;
-                        UIView *bottomLine = self.horizontalLines.lastObject;
-            
-                        CGRect gridRect = CGRectMake(CGRectGetMinX(leftLine.frame),CGRectGetMinY(topLine.frame),CGRectGetMaxX(rightLine.frame) - CGRectGetMinX(leftLine.frame),CGRectGetMinY(bottomLine.frame) - CGRectGetMinY(topLine.frame));
-            
-                        CGRect cropRect = gridRect;
-                        cropRect.origin.x = (CGRectGetMinX(gridRect) + (image.size.width - CGRectGetWidth(gridRect)) / 2);
-            
-                        image = [image imageCroppedToRect:cropRect];
+                    CGSize size = self.captureVideoPreviewLayer.bounds.size;
+                    CGRect cropRect = self.cropBox.frame;
+                    cropRect.origin.x = (CGRectGetMinX(cropRect) + (image.size.width - CGRectGetWidth(cropRect)) / 2);
+
+                    UIImage *scaledImage = [image imageByScalingToSize:size andCroppingWithRect:cropRect];
             
             // #13
                         dispatch_async(dispatch_get_main_queue(), ^{
-                                [self.delegate cameraViewController:self didCompleteWithImage:image];
+                                [self.delegate cameraViewController:self didCompleteWithImage:scaledImage];
                             });
                     } else {
                             dispatch_async(dispatch_get_main_queue(), ^{
@@ -309,7 +256,11 @@
 
 
 
+#pragma mark - ImageLibraryViewControllerDelegate
 
+- (void) imageLibraryViewController:(ImageLibraryViewController *)imageLibraryViewController didCompleteWithImage:(UIImage *)image {
+        [self.delegate cameraViewController:self didCompleteWithImage:image];
+    }
 
 
 

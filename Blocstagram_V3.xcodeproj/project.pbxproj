@@ -10,6 +10,9 @@
 		828841D495711D82F68BD5B3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8101597645150D927A949B /* libPods.a */; };
 		BC307EA91AFBBA9A001D3BBA /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */; };
 		BC307EAC1B0389AE001D3BBA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC307EAB1B0389AE001D3BBA /* LoginViewController.m */; };
+		BC3272FC1B3F1D3400614A7C /* CropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3272FB1B3F1D3400614A7C /* CropBox.m */; };
+		BC3272FF1B3F27AD00614A7C /* CropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3272FE1B3F27AD00614A7C /* CropImageViewController.m */; };
+		BC3273051B3F3FF400614A7C /* ImageLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3273041B3F3FF400614A7C /* ImageLibraryViewController.m */; };
 		BC91B1A81B289B070057035E /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91B1A71B289B070057035E /* ComposeCommentView.m */; };
 		BCD50BC91B3050B100F9F45D /* CameraToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BC81B3050B100F9F45D /* CameraToolBar.m */; };
 		BCD50BD51B31C89000F9F45D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BD41B31C89000F9F45D /* CameraViewController.m */; };
@@ -55,6 +58,12 @@
 		BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaTableViewCell.m; path = ../MediaTableViewCell.m; sourceTree = "<group>"; };
 		BC307EAA1B0389AE001D3BBA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		BC307EAB1B0389AE001D3BBA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		BC3272FA1B3F1D3400614A7C /* CropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CropBox.h; path = ../CropBox.h; sourceTree = "<group>"; };
+		BC3272FB1B3F1D3400614A7C /* CropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CropBox.m; path = ../CropBox.m; sourceTree = "<group>"; };
+		BC3272FD1B3F27AD00614A7C /* CropImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CropImageViewController.h; path = ../CropImageViewController.h; sourceTree = "<group>"; };
+		BC3272FE1B3F27AD00614A7C /* CropImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CropImageViewController.m; path = ../CropImageViewController.m; sourceTree = "<group>"; };
+		BC3273031B3F3FF400614A7C /* ImageLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLibraryViewController.h; sourceTree = "<group>"; };
+		BC3273041B3F3FF400614A7C /* ImageLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLibraryViewController.m; sourceTree = "<group>"; };
 		BC91B1A61B289B070057035E /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComposeCommentView.h; path = ../ComposeCommentView.h; sourceTree = "<group>"; };
 		BC91B1A71B289B070057035E /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposeCommentView.m; path = ../ComposeCommentView.m; sourceTree = "<group>"; };
 		BCD50BC71B3050B100F9F45D /* CameraToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraToolBar.h; path = ../CameraToolBar.h; sourceTree = "<group>"; };
@@ -190,6 +199,12 @@
 				BCD50BD41B31C89000F9F45D /* CameraViewController.m */,
 				BCDC05E91B3B036F00515420 /* UIImage+ImageUtilities.h */,
 				BCDC05EA1B3B036F00515420 /* UIImage+ImageUtilities.m */,
+				BC3272FA1B3F1D3400614A7C /* CropBox.h */,
+				BC3272FB1B3F1D3400614A7C /* CropBox.m */,
+				BC3272FD1B3F27AD00614A7C /* CropImageViewController.h */,
+				BC3272FE1B3F27AD00614A7C /* CropImageViewController.m */,
+				BC3273031B3F3FF400614A7C /* ImageLibraryViewController.h */,
+				BC3273041B3F3FF400614A7C /* ImageLibraryViewController.m */,
 				BCE9801C1AF7BE9700F4222E /* Images.xcassets */,
 				BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */,
 				BCDA36001B23E8AA00DB68BF /* angle-mask@2x.png */,
@@ -380,7 +395,10 @@
 				BCD657871B17740300787884 /* MediaFullScreenViewController.m in Sources */,
 				BCDA36161B23ECC100DB68BF /* CircleSpinnerView.m in Sources */,
 				BCE9804F1AF909A900F4222E /* User.m in Sources */,
+				BC3273051B3F3FF400614A7C /* ImageLibraryViewController.m in Sources */,
+				BC3272FC1B3F1D3400614A7C /* CropBox.m in Sources */,
 				BCE980551AF90B1E00F4222E /* Comment.m in Sources */,
+				BC3272FF1B3F27AD00614A7C /* CropImageViewController.m in Sources */,
 				BCD50BC91B3050B100F9F45D /* CameraToolBar.m in Sources */,
 				BC307EA91AFBBA9A001D3BBA /* MediaTableViewCell.m in Sources */,
 				BCE980521AF90A9000F4222E /* Media.m in Sources */,
@@ -538,10 +556,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -558,10 +572,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = Blocstagram_V3Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.diegoa3d.$(PRODUCT_NAME:rfc1034identifier)";

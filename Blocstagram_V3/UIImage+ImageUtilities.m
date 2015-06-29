@@ -127,5 +127,14 @@
         UIImage *image = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
         CGImageRelease(imageRef);
         return image;
-    }
+}
+
+- (UIImage *) imageByScalingToSize:(CGSize)size andCroppingWithRect:(CGRect)rect {
+    
+    UIImage *image = [self imageWithFixedOrientation];
+    image = [image imageResizedToMatchAspectRatioOfSize:size];
+    
+    return [image imageCroppedToRect:rect];
+}
+
 @end
