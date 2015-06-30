@@ -14,6 +14,8 @@
 		BC3272FF1B3F27AD00614A7C /* CropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3272FE1B3F27AD00614A7C /* CropImageViewController.m */; };
 		BC3273051B3F3FF400614A7C /* ImageLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3273041B3F3FF400614A7C /* ImageLibraryViewController.m */; };
 		BC91B1A81B289B070057035E /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91B1A71B289B070057035E /* ComposeCommentView.m */; };
+		BC979CC61B42207F00AC6347 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC979CC51B42207F00AC6347 /* GameKit.framework */; };
+		BC979CC81B42208200AC6347 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC979CC71B42208200AC6347 /* StoreKit.framework */; };
 		BCD50BC91B3050B100F9F45D /* CameraToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BC81B3050B100F9F45D /* CameraToolBar.m */; };
 		BCD50BD51B31C89000F9F45D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BD41B31C89000F9F45D /* CameraViewController.m */; };
 		BCD657871B17740300787884 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD657861B17740300787884 /* MediaFullScreenViewController.m */; };
@@ -66,6 +68,9 @@
 		BC3273041B3F3FF400614A7C /* ImageLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLibraryViewController.m; sourceTree = "<group>"; };
 		BC91B1A61B289B070057035E /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComposeCommentView.h; path = ../ComposeCommentView.h; sourceTree = "<group>"; };
 		BC91B1A71B289B070057035E /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposeCommentView.m; path = ../ComposeCommentView.m; sourceTree = "<group>"; };
+		BC979CC51B42207F00AC6347 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		BC979CC71B42208200AC6347 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BCB8C92F1B41AB19004E60EA /* Blocstagram_V3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Blocstagram_V3.entitlements; sourceTree = "<group>"; };
 		BCD50BC71B3050B100F9F45D /* CameraToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraToolBar.h; path = ../CameraToolBar.h; sourceTree = "<group>"; };
 		BCD50BC81B3050B100F9F45D /* CameraToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraToolBar.m; path = ../CameraToolBar.m; sourceTree = "<group>"; };
 		BCD50BD31B31C89000F9F45D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = ../CameraViewController.h; sourceTree = "<group>"; };
@@ -115,7 +120,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC979CC81B42208200AC6347 /* StoreKit.framework in Frameworks */,
 				828841D495711D82F68BD5B3 /* libPods.a in Frameworks */,
+				BC979CC61B42207F00AC6347 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +139,8 @@
 		2B0474DC7E4F1E58AFAAC115 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC979CC71B42208200AC6347 /* StoreKit.framework */,
+				BC979CC51B42207F00AC6347 /* GameKit.framework */,
 				2B8101597645150D927A949B /* libPods.a */,
 			);
 			name = Frameworks;
@@ -169,6 +178,7 @@
 		BCE9800E1AF7BE9600F4222E /* Blocstagram_V3 */ = {
 			isa = PBXGroup;
 			children = (
+				BCB8C92F1B41AB19004E60EA /* Blocstagram_V3.entitlements */,
 				BCE980131AF7BE9700F4222E /* AppDelegate.h */,
 				BCE980141AF7BE9700F4222E /* AppDelegate.m */,
 				BCE9804A1AF7C28800F4222E /* ImagesTableTableViewController.h */,
@@ -299,9 +309,21 @@
 					BCE9800B1AF7BE9600F4222E = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = HQN23BS377;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					BCE980241AF7BE9700F4222E = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = HQN23BS377;
 						TestTargetID = BCE9800B1AF7BE9600F4222E;
 					};
 				};
@@ -483,6 +505,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "61e043db-c0c3-4cb7-9bec-0a10b50764c7";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -520,6 +543,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "61e043db-c0c3-4cb7-9bec-0a10b50764c7";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -556,6 +580,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -564,6 +590,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.diegoa3d.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blocstagram_V3.app/Blocstagram_V3";
 			};
 			name = Debug;
@@ -572,10 +599,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Blocstagram_V3Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.diegoa3d.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blocstagram_V3.app/Blocstagram_V3";
 			};
 			name = Release;

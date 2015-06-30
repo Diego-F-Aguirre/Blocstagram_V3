@@ -9,12 +9,15 @@
 #import "ImageLibraryViewController.h"
 #import <Photos/Photos.h>
 #import "CropImageViewController.h"
+#import "CameraViewController.h"
 
 
 @interface ImageLibraryViewController () <CropImageViewControllerDelegate>
 
 @property (nonatomic, strong) PHFetchResult *result;
-
+@property (nonatomic, strong) UIToolbar *topView;
+@property (nonatomic, strong) UIToolbar *bottomView;
+@property (nonatomic, strong) NSArray *collectionResult;
 @end
 
 @implementation ImageLibraryViewController
@@ -25,6 +28,7 @@ static NSString * const reuseIdentifier = @"Cell";
 {
         [super viewDidLoad];
         // Do any additional setup after loading the view.
+    [self createViews];
     
         [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
@@ -47,6 +51,16 @@ static NSString * const reuseIdentifier = @"Cell";
         return [super initWithCollectionViewLayout:layout];
     }
 
+- (void)addViewsToViewHierarchy{
+    
+    NSMutableArray *views = [@[self.topView, self.bottomView]mutableCopy];
+    
+    
+    for (UIView *view in views){
+        
+        [self.view addSubview:view];
+    }
+}
 
 - (void) viewWillLayoutSubviews {
         [super viewWillLayoutSubviews];
@@ -60,6 +74,12 @@ static NSString * const reuseIdentifier = @"Cell";
         flowLayout.itemSize = CGSizeMake(cellSize, cellSize);
         flowLayout.minimumInteritemSpacing = 0;
         flowLayout.minimumLineSpacing = 0;
+    
+    
+    self.topView.frame = CGRectMake(0, self.topLayoutGuide.length, width, 44);
+    CGFloat yOriginOfBottomView = CGRectGetMaxY(self.topView.frame) + width;
+    CGFloat heightOfBottomView = CGRectGetHeight(self.view.frame) - yOriginOfBottomView;
+    self.bottomView.frame = CGRectMake(0, yOriginOfBottomView, width, heightOfBottomView);
     }
 
 - (void) loadAssets {
@@ -67,6 +87,7 @@ static NSString * const reuseIdentifier = @"Cell";
         options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
     
         self.result = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:options];
+    
     }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -168,6 +189,16 @@ static NSString * const reuseIdentifier = @"Cell";
         [self.delegate imageLibraryViewController:self didCompleteWithImage:croppedImage];
     }
 
+- (void)createViews{
+    
+    self.topView = [UIToolbar new];
+    self.bottomView = [UIToolbar new];
+    UIColor *whiteBG = [UIColor colorWithWhite:1.0 alpha:.15];
+    self.topView.barTintColor = whiteBG;
+    self.bottomView.barTintColor = whiteBG;
+    self.topView.alpha = 0.5;
+    self.bottomView.alpha = 0.5;
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
