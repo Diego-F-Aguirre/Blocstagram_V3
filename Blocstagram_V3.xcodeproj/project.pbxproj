@@ -16,6 +16,7 @@
 		BC91B1A81B289B070057035E /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91B1A71B289B070057035E /* ComposeCommentView.m */; };
 		BC979CC61B42207F00AC6347 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC979CC51B42207F00AC6347 /* GameKit.framework */; };
 		BC979CC81B42208200AC6347 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC979CC71B42208200AC6347 /* StoreKit.framework */; };
+		BC979CCB1B42DA3300AC6347 /* PostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC979CCA1B42DA3300AC6347 /* PostToInstagramViewController.m */; };
 		BCD50BC91B3050B100F9F45D /* CameraToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BC81B3050B100F9F45D /* CameraToolBar.m */; };
 		BCD50BD51B31C89000F9F45D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BD41B31C89000F9F45D /* CameraViewController.m */; };
 		BCD657871B17740300787884 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD657861B17740300787884 /* MediaFullScreenViewController.m */; };
@@ -70,6 +71,8 @@
 		BC91B1A71B289B070057035E /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposeCommentView.m; path = ../ComposeCommentView.m; sourceTree = "<group>"; };
 		BC979CC51B42207F00AC6347 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BC979CC71B42208200AC6347 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BC979CC91B42DA3300AC6347 /* PostToInstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostToInstagramViewController.h; path = ../PostToInstagramViewController.h; sourceTree = "<group>"; };
+		BC979CCA1B42DA3300AC6347 /* PostToInstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostToInstagramViewController.m; path = ../PostToInstagramViewController.m; sourceTree = "<group>"; };
 		BCB8C92F1B41AB19004E60EA /* Blocstagram_V3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Blocstagram_V3.entitlements; sourceTree = "<group>"; };
 		BCD50BC71B3050B100F9F45D /* CameraToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraToolBar.h; path = ../CameraToolBar.h; sourceTree = "<group>"; };
 		BCD50BC81B3050B100F9F45D /* CameraToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraToolBar.m; path = ../CameraToolBar.m; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				BC3272FE1B3F27AD00614A7C /* CropImageViewController.m */,
 				BC3273031B3F3FF400614A7C /* ImageLibraryViewController.h */,
 				BC3273041B3F3FF400614A7C /* ImageLibraryViewController.m */,
+				BC979CC91B42DA3300AC6347 /* PostToInstagramViewController.h */,
+				BC979CCA1B42DA3300AC6347 /* PostToInstagramViewController.m */,
 				BCE9801C1AF7BE9700F4222E /* Images.xcassets */,
 				BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */,
 				BCDA36001B23E8AA00DB68BF /* angle-mask@2x.png */,
@@ -425,6 +430,7 @@
 				BC307EA91AFBBA9A001D3BBA /* MediaTableViewCell.m in Sources */,
 				BCE980521AF90A9000F4222E /* Media.m in Sources */,
 				BCE9804C1AF7C28800F4222E /* ImagesTableTableViewController.m in Sources */,
+				BC979CCB1B42DA3300AC6347 /* PostToInstagramViewController.m in Sources */,
 				BC307EAC1B0389AE001D3BBA /* LoginViewController.m in Sources */,
 				BCDA36191B272D0E00DB68BF /* LikeButton.m in Sources */,
 				BCE980581AF90BC500F4222E /* DataSource.m in Sources */,
