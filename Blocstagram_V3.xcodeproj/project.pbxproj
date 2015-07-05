@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		BCD50BC91B3050B100F9F45D /* CameraToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BC81B3050B100F9F45D /* CameraToolBar.m */; };
 		BCD50BD51B31C89000F9F45D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD50BD41B31C89000F9F45D /* CameraViewController.m */; };
 		BCD657871B17740300787884 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD657861B17740300787884 /* MediaFullScreenViewController.m */; };
+		BCD6F1031B49DBB900827612 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6F1021B49DBB900827612 /* UserTests.m */; };
 		BCDA36081B23E8AA00DB68BF /* angle-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */; };
 		BCDA36091B23E8AA00DB68BF /* angle-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDA36001B23E8AA00DB68BF /* angle-mask@2x.png */; };
 		BCDA360A1B23E8AA00DB68BF /* angle-mask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDA36011B23E8AA00DB68BF /* angle-mask@3x.png */; };
@@ -80,6 +81,7 @@
 		BCD50BD41B31C89000F9F45D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = ../CameraViewController.m; sourceTree = "<group>"; };
 		BCD657851B17740300787884 /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaFullScreenViewController.h; path = ../MediaFullScreenViewController.h; sourceTree = "<group>"; };
 		BCD657861B17740300787884 /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaFullScreenViewController.m; path = ../MediaFullScreenViewController.m; sourceTree = "<group>"; };
+		BCD6F1021B49DBB900827612 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
 		BCDA35FF1B23E8AA00DB68BF /* angle-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask.png"; sourceTree = "<group>"; };
 		BCDA36001B23E8AA00DB68BF /* angle-mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask@2x.png"; sourceTree = "<group>"; };
 		BCDA36011B23E8AA00DB68BF /* angle-mask@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-mask@3x.png"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE9802B1AF7BE9700F4222E /* Blocstagram_V3Tests.m */,
+				BCD6F1021B49DBB900827612 /* UserTests.m */,
 				BCE980291AF7BE9700F4222E /* Supporting Files */,
 			);
 			path = Blocstagram_V3Tests;
@@ -308,7 +311,7 @@
 		BCE980041AF7BE9600F4222E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Diego Aguirre";
 				TargetAttributes = {
 					BCE9800B1AF7BE9600F4222E = {
@@ -334,7 +337,7 @@
 				};
 			};
 			buildConfigurationList = BCE980071AF7BE9600F4222E /* Build configuration list for PBXProject "Blocstagram_V3" */;
-			compatibilityVersion = "Xcode 6.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -445,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD6F1031B49DBB900827612 /* UserTests.m in Sources */,
 				BCE9802C1AF7BE9700F4222E /* Blocstagram_V3Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
