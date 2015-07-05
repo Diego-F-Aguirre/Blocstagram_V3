@@ -93,8 +93,6 @@ static UIColor *commentLabelTextColor;
         self.usernameAndCaptionLabel.numberOfLines = 0;
         self.usernameAndCaptionLabel.backgroundColor = usernameLabelGray;
         
-        
-        
         self.commentLabel = [[UILabel alloc]init];
         self.commentLabel.numberOfLines = 0;
         self.commentLabel.backgroundColor = commentLabelGray;
@@ -107,16 +105,6 @@ static UIColor *commentLabelTextColor;
         
         self.commentView = [[ComposeCommentView alloc]init];
         self.commentView.delegate = self;
-        
-        
-//        self.likeCounter = [[UILabel alloc]initWithFrame:CGRectMake(200, 100, 20, 20)];
-//        self.likeCounter.numberOfLines = 0;
-//        self.likeCounter.backgroundColor = commentLabelGray;
-//        self.likeCounter.textColor = commentLabelTextColor;
-        
-        
-    
-    
         
         for (UIView *view in @[self.mediaImageView,self.usernameAndCaptionLabel,self.commentLabel, self.likeButton, self.commentView]) {
         

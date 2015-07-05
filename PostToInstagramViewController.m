@@ -329,6 +329,29 @@
                         [self addCIImageToCollectionView:composite.outputImage withFilterTitle:NSLocalizedString(@"Film", @"Film Filter")];
                     }
             }];
+    
+    //CIColorMonochrome
+    
+        [self.photoFilterOperationQueue addOperationWithBlock:^{
+            CIFilter *colorMonochromeFilter = [CIFilter filterWithName:@"CIColorMonochrome"];
+            
+            if (colorMonochromeFilter) {
+                [colorMonochromeFilter setValue:sourceCIImage forKey:kCIInputImageKey];
+                [self addCIImageToCollectionView:colorMonochromeFilter.outputImage withFilterTitle:NSLocalizedString(@"Monochrome", @"Color Monochrome Filter")];
+            }
+        }];
+    
+    //CIColorPosterize
+    
+    [self.photoFilterOperationQueue addOperationWithBlock:^{
+        CIFilter *colorPosterizeFilter = [CIFilter filterWithName:@"CIColorPosterize"];
+        
+        if (colorPosterizeFilter) {
+            [colorPosterizeFilter setValue:sourceCIImage forKey:kCIInputImageKey];
+            [self addCIImageToCollectionView:colorPosterizeFilter.outputImage withFilterTitle:NSLocalizedString(@"Posterize", @"Color Posterize Filter")];
+        }
+    }];
+    
     }
 
 - (void) sendButtonPressed:(id)sender {
