@@ -87,6 +87,7 @@ static NSString * const reuseIdentifier = @"Cell";
         options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
     
         self.result = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:options];
+        [self.collectionView reloadData];
     
     }
 
@@ -98,7 +99,6 @@ static NSString * const reuseIdentifier = @"Cell";
                         if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized) {
                                 dispatch_async(dispatch_get_main_queue(), ^{
                                         [self loadAssets];
-                                        [self.collectionView reloadData];
                                     });
                             }
                     }];
