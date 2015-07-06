@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		828841D495711D82F68BD5B3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8101597645150D927A949B /* libPods.a */; };
+		BC2D62B41B49FD0E007C8D90 /* MediaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2D62B31B49FD0E007C8D90 /* MediaTests.m */; };
 		BC307EA91AFBBA9A001D3BBA /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */; };
 		BC307EAC1B0389AE001D3BBA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC307EAB1B0389AE001D3BBA /* LoginViewController.m */; };
 		BC3272FC1B3F1D3400614A7C /* CropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3272FB1B3F1D3400614A7C /* CropBox.m */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		2B8101597645150D927A949B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D6FE2F05069FD79D25ABF1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BC2D62B31B49FD0E007C8D90 /* MediaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTests.m; sourceTree = "<group>"; };
 		BC307EA71AFBBA9A001D3BBA /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaTableViewCell.h; path = ../MediaTableViewCell.h; sourceTree = "<group>"; };
 		BC307EA81AFBBA9A001D3BBA /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaTableViewCell.m; path = ../MediaTableViewCell.m; sourceTree = "<group>"; };
 		BC307EAA1B0389AE001D3BBA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				BCE9802B1AF7BE9700F4222E /* Blocstagram_V3Tests.m */,
 				BCD6F1021B49DBB900827612 /* UserTests.m */,
+				BC2D62B31B49FD0E007C8D90 /* MediaTests.m */,
 				BCE980291AF7BE9700F4222E /* Supporting Files */,
 			);
 			path = Blocstagram_V3Tests;
@@ -448,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2D62B41B49FD0E007C8D90 /* MediaTests.m in Sources */,
 				BCD6F1031B49DBB900827612 /* UserTests.m in Sources */,
 				BCE9802C1AF7BE9700F4222E /* Blocstagram_V3Tests.m in Sources */,
 			);
