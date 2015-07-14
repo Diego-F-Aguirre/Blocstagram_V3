@@ -292,7 +292,7 @@ static UIColor *commentLabelTextColor;
 
     // Write method counter here
     
-    for (int x; x < 0; x++) {
+    for (int x = 0; x < 0; x++) {
         _likeCounter.text = [NSString stringWithFormat:@"%d", x];
     }
     
